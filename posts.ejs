@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Posts</title>
+</head>
+<body class="bottom">
+  <h1>All Blogs</h1>
+
+<% if (writtenStuff.length === 0) { %>
+  <p>No blogs yet.</p>
+<% } else { %>
+  <% writtenStuff.forEach(post => { %>
+   <div class="blogs"> <p><%= post.content %></p> 
+     
+    <a href="/edit/<%= post.id %>">Edit</a>
+    <br/>
+
+
+
+      <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+      <button type="submit">Delete</button>
+      </form></div>
+    <hr>
+  <% }) %>
+<% } %>
+
+<a href="/">Write another blog</a>
+
+</body>
+</html>
+
+<%- include("partials/footer.ejs") %>

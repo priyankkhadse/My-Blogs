@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Blog</title>
+</head>
+<body> <div class="editor">
+  <h1>Edit Blog</h1>
+
+  <form action="/update/<%= post.id %>" method="POST">
+    <textarea class="text" name="content"><%= post.content %></textarea>
+    <br/>
+    <button type="submit">Update</button>
+  </form>
+</div>
+  <a href="/posts">Cancel</a>
+</body>
+</html>
+
+<%- include("partials/footer.ejs") %>

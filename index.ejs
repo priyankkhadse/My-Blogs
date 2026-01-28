@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog Site</title>
+</head>
+<body > <div class="container">
+<h1>Write Your Blog</h1>
+
+  <form action="/submit" method="POST">
+  <textarea class="text" name="content" placeholder="Write your blog here"></textarea>
+  <br>
+  <button type="submit">Post</button>
+  </form>
+</div>
+</body>
+</html>
+
+<%- include("partials/footer.ejs") %>
